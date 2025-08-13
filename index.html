@@ -3,30 +3,99 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coming Soon</title>
+  <title>Fundtelligence — Coming Soon</title>
+  <meta name="description" content="Fundtelligence — We’re building something new. Launching soon." />
   <style>
-    html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
-    .wrap { min-height: 100%; display: flex; align-items: center; justify-content: center; padding: 4rem 1.5rem; background: #0f172a; color: #e5e7eb; }
-    .card { max-width: 720px; width: 100%; background: #111827; border: 1px solid #1f2937; border-radius: 16px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
-    h1 { margin: 0 0 0.75rem; font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.15; }
-    p { margin: 0.25rem 0 1rem; color: #9ca3af; }
+    :root {
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e5e7eb;
+      --accent: #2563eb;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 4rem 1.25rem;
+    }
+    .card {
+      width: 100%;
+      max-width: 720px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: clamp(1.5rem, 3vw, 2rem);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: .3px;
+      color: var(--accent);
+      margin-bottom: .25rem;
+    }
+    h1 {
+      margin: 0 0 .25rem;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      line-height: 1.15;
+    }
+    p {
+      margin: .25rem 0 1rem;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.2vw, 1.05rem);
+    }
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 1.25rem 0 1rem;
+    }
+    /* Optional form styles (kept for later) */
     form { display: flex; gap: .5rem; margin-top: 1rem; }
-    input[type="email"] { flex: 1; padding: .75rem 1rem; border-radius: 12px; border: 1px solid #374151; background: #0b1220; color: #e5e7eb; }
-    button { padding: .75rem 1rem; border-radius: 12px; border: 1px solid #374151; background: #1f2937; color: #e5e7eb; cursor: pointer; }
-    button:hover { filter: brightness(1.1); }
-    .footer { margin-top: 1rem; font-size: .9rem; color: #6b7280; }
-    .logo { font-weight: 700; letter-spacing: .2px; color: #93c5fd; }
+    input[type="email"] {
+      flex: 1; padding: .8rem 1rem; border-radius: 12px; border: 1px solid var(--border);
+      background: #fbfdff; color: var(--text);
+    }
+    button {
+      padding: .8rem 1rem; border-radius: 12px; border: 1px solid var(--border);
+      background: #eef2ff; color: var(--text); cursor: pointer;
+    }
+    button:hover { filter: brightness(1.02); }
+    .footer {
+      margin-top: .75rem;
+      font-size: .95rem;
+      color: var(--muted);
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <section class="card">
+    <section class="card" role="region" aria-label="Coming soon">
       <div class="logo">fundtelligence</div>
       <h1>We’re building something new.</h1>
       <p>And we will launch soon...</p>
-      <div class="footer">© <span id="y"></span> Fundtelligence. All rights reserved.</div>
+
+      <!--
+      Email capture (enable later):
+      <form action="https://formspree.io/f/your-id" method="POST">
+        <input type="email" name="email" placeholder="you@domain.com" required />
+        <button type="submit">Notify me</button>
+      </form>
+      -->
+
+      <div class="divider" aria-hidden="true"></div>
+      <div class="footer">© 2025 Fundtelligence. All rights reserved.</div>
     </section>
   </main>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
